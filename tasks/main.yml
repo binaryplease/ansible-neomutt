@@ -1,0 +1,38 @@
+---
+# tasks file for ansible-neomutt
+- name: Copy main configuration files
+  copy:
+    src: "{{item}}"
+    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+  with_items:
+    - mailcap
+    - neomuttrc
+    - sidebar.muttrc
+    - colors.muttrc
+
+- name: Copy account settings
+  copy:
+    src: "{{item}}"
+    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+  with_items:
+    - acc1
+    - acc2
+    - acc3
+
+- name: Copy signatures
+  copy:
+    src: "{{item}}"
+    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+  with_items:
+    - acc1_signature
+    - acc2_signature
+    - acc3_signature
+
+- name: Create account directories
+  file:
+    path: "/home/{{user}}/.config/neomutt/{{item}}"
+    state: directory
+  with_items:
+    - acc1_folder
+    - acc2_folder
+    - acc3_folder
