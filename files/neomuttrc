@@ -67,8 +67,7 @@ set autoedit
 
 
 ## Look and feel -----------------------------------------------------------------
-#set date_format			= "!%a, %b %d, %Y at %I:%M:%S%p %Z"a
-set index_format		= '%4C [%Z] %{%Y-%m-%d} %-25.25L (%?l?%4l&%4c?) %s'	# Customize the messaage index display
+set index_format		= '%4C [%zs %zc] %{%Y-%m-%d} %-25.25L (%?l?%4l&%4c?) %s'	# Customize the messaage index display
 set sort_browser		= alpha											# Sort entries in the file browser
 set sort_aux			= reverse-last-date-received					# Sort mails in reverse date order (threads)
 set sort				= reverse-date-received							# Sort with the newest at the top
@@ -78,7 +77,5 @@ set uncollapse_jump		= yes											# Don't jump to next unread message when a 
 set wait_key = no
 source ./sidebar.muttrc
 
-
 ##### Colors
-# source ~/.config/neomutt/dracula_theme/dracula.muttrc
 source ~/.config/neomutt/colors.muttrc
