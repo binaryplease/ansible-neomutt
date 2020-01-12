@@ -3,7 +3,7 @@
 - name: Copy main configuration files
   copy:
     src: "{{item}}"
-    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+    dest: "{{ansible_env.HOME}}/.config/neomutt/{{item}}"
   with_items:
     - mailcap
     - neomuttrc
@@ -13,7 +13,7 @@
 - name: Copy account settings
   copy:
     src: "{{item}}"
-    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+    dest: "{{ansible_env.HOME}}/.config/neomutt/{{item}}"
   with_items:
     - acc1
     - acc2
@@ -22,7 +22,7 @@
 - name: Copy signatures
   copy:
     src: "{{item}}"
-    dest: "/home/{{user}}/.config/neomutt/{{item}}"
+    dest: "{{ansible_env.HOME}}/.config/neomutt/{{item}}"
   with_items:
     - acc1_signature
     - acc2_signature
@@ -30,7 +30,7 @@
 
 - name: Create account directories
   file:
-    path: "/home/{{user}}/.config/neomutt/{{item}}"
+    path: "{{ansible_env.HOME}}/.config/neomutt/{{item}}"
     state: directory
   with_items:
     - acc1_folder
