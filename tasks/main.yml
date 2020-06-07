@@ -1,5 +1,10 @@
 ---
 # tasks file for ansible-neomutt
+- name: "Make sure {{ansible_env.HOME}}/.config/neomutt exists"
+  file:
+    path: "{{ansible_env.HOME}}/.config/neomutt"
+    state: directory
+
 - name: Copy main configuration files
   copy:
     src: "{{item}}"
